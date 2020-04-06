@@ -1,4 +1,4 @@
-
+#Code that displays the temperature on a 4 digit 7 segment display
 
 import RPi.GPIO as GPIO
 import time
@@ -24,9 +24,8 @@ else:
 
 # d1d2 is min degree, d3d4 is max degree
 
-
-seg = (15,16,17,18,19,20,21,22)
-coms = (23,24,25,26) #left -> right
+seg = (15,16,17,18,19,20,21,22) #a ~ g and dp
+coms = (23,24,25,26) #left -> right controls which segment to use
 
 num = [
     [0,0,0,0,0,0,1,1], #0
@@ -53,13 +52,13 @@ while True:
     for i in range(4):
         digit = 0
         if i == 0:
-            digit = d1
+            digit = int(d1)
         elif i == 1:
-            digit = d2
+            digit = int(d2)
         elif i == 2:
-            digit = d3
+            digit = int(d3)
         elif i == 3:
-            digit = d4
+            digit = int(d4)
 
         GPIO.output(coms[i],1)
         for j in range(8):
