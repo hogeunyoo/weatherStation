@@ -172,4 +172,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Private
+private.py
+
+# test
+
+TEST*.*
 # End of https://www.gitignore.io/api/macos,python,windows,visualstudiocode
