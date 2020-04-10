@@ -65,9 +65,9 @@ def temperature(min_degree, max_degree):
             GPIO.output(coms[i], 1)
 
             for j in range(8):
-                time.sleep(0.01)
                 GPIO.output(data, num[digit][j])
                 GPIO.output(clock, 1)
+                time.sleep(0.01)
                 GPIO.output(clock, 0)
 
             GPIO.output(latch, 1)
@@ -75,6 +75,7 @@ def temperature(min_degree, max_degree):
             GPIO.output(latch, 0)
 
             GPIO.output(coms[i], 0)
-        time.sleep(0.01)
+            #time.sleep(0.01)
+        time.sleep(0.001)
 
 temperature(15, 31)
