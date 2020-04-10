@@ -4,9 +4,9 @@ def temperature(min_degree, max_degree):
     GPIO.setwarnings(False)
     GPIO.setmode (GPIO.BCM)
 
-    data = 3
-    latch = 5
-    clock = 7
+    data = 2
+    latch = 3
+    clock = 4
 
     if min_degree < 10:
         d1 = 0
@@ -24,7 +24,7 @@ def temperature(min_degree, max_degree):
 
     # d1d2 is min degree, d3d4 is max degree
 
-    coms = (29,31,33,35) #left -> right controls which segment to use
+    coms = (10,11,12,13) #left -> right controls which segment to use
 
     num = [
         [0,0,0,0,0,0,1,1], #0
